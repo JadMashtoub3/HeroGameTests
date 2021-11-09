@@ -1,4 +1,4 @@
-using System;
+/*using System;
 using Xunit;
 using HeroGameAdvancedLib;
 namespace HeroGameAdvancedTests
@@ -22,11 +22,11 @@ namespace HeroGameAdvancedTests
         [InlineData(11, 10,-1)] //sets hp to -1 test
         [InlineData(10,90,10)]
         [InlineData(0,1,0)]
-        public void AttackTest(int attacks, int expectedUses, int expectedDamage)
+        public void AttackTest(int expectedAttacks, int expectedUses, int expectedDamage)
         {   
-        int Damage = TestHero.Attack(attacks);
+        int Damage = TestHero.Attack(expectedAttacks);
         Assert.Equal(expectedUses,TestHero.Uses);
-        Assert.Equal(Damage, expectedDamage);
+        Assert.Equal(Damage, expectedDamage); 
         }
-    }
-}
+    } 
+}*/
