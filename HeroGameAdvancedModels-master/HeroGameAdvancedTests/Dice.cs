@@ -1,4 +1,4 @@
-/*using System;
+using System;
 using Xunit;
 using HeroGameAdvancedLib;
 namespace HeroGameAdvancedTests
@@ -29,4 +29,3 @@ namespace HeroGameAdvancedTests
     }
 
 }
-*/
