@@ -17,8 +17,14 @@ namespace HeroGameAdvancedLib {
         // Hero is able to attack a given number of times.  Each time a hero attacks subtract 1 from Uses
         // timesToAttack is greater that the number of Uses should return -1 and not subtract from Uses.
         public int Attack(int timesToAttack) {
+            //if dmg is higher than health return -1
+             if(timesToAttack > this.Uses)
+             {
+                return -1;
+            }
             this.Uses -= timesToAttack;
             return this.Dice.Roll() * timesToAttack;
+            
         }
 
         
@@ -41,6 +47,12 @@ namespace HeroGameAdvancedLib {
             this.Hitpoints -= amount;
             if (this.Hitpoints < 0)
                 this.Hitpoints = 0; 
+               //returns result if the amount reaches under 0
+                if (amount < 0)
+                {
+                return;
+                
+            }
         }
     }
 

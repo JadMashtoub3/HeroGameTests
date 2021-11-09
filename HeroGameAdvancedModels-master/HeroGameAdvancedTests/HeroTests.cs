@@ -1,4 +1,4 @@
-/*using System;
+using System;
 using Xunit;
 using HeroGameAdvancedLib;
 namespace HeroGameAdvancedTests
@@ -7,26 +7,24 @@ namespace HeroGameAdvancedTests
     {
         // Hero is able to attack a given number of times.  Each time a hero attacks subtract 1 from Uses
         // timesToAttack is greater that the number of Uses should return -1 and not subtract from Uses.
-        Dice TestDice;
-        Hero TestHero;
-        Villain TestVillain;
-        
+        Dice testhero1;
+        Hero testhero;
+
         public HeroTests(){
-        this.TestDice = new Dice(0,6);
-        this.TestHero = new Hero(1, "Hero", TestDice, 10);
-        this.TestVillain = new Villain(1, "vill", 10);
+        this.testhero1 = new Dice(1,1);
+        this.testhero = new Hero(1, "testhero", testhero1, 100);
         }
-        //attack, uses, damage
         [Theory]
-        [InlineData(1, 5, 1)]
-        [InlineData(11, 10,-1)] //sets hp to -1 test
+        [InlineData(1, 99,1)]
+        [InlineData(101, 100,-1)]
         [InlineData(10,90,10)]
-        [InlineData(0,1,0)]
+        [InlineData(1000,100,-1)]
         public void AttackTest(int expectedAttacks, int expectedUses, int expectedDamage)
         {   
-        int Damage = TestHero.Attack(expectedAttacks);
-        Assert.Equal(expectedUses,TestHero.Uses);
-        Assert.Equal(Damage, expectedDamage); 
+            int Damage = testhero.Attack(expectedAttacks);
+            Assert.Equal(expectedUses,testhero.Uses);
+            
+            Assert.Equal(Damage, expectedDamage);
         }
-    } 
-}*/
+    }
+}
